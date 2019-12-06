@@ -1,6 +1,7 @@
 const express = require('express')
 const http = require('http')
 const stopabble = require('stoppable')
+const multer = require('multer')
 
 const expressApp = express()
 
@@ -29,10 +30,12 @@ const search = ({ path }) => {
     })
   }
 
-  return result.map((item) => ({ path: item.path, query: item.query, method: item.method }))
+  return result.map((item) => ({ path: item.path, query: item.query, method: item.method, files: item.files }))
 }
 
-expressApp.all('*', (req, res, next) => {
+const upload = multer()
+
+expressApp.all('*', upload.array('images'), (req, res, next) => {
   requestsData.push(req)
   res.send(response.body)
 })

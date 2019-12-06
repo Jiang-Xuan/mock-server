@@ -2,8 +2,7 @@
 
 一个 server 模拟工具, 可配置响应, 提供接口获取某个请求的详细数据
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![](https://github.com/Jiang-Xuan/mock-server/workflows/Node%20CI/badge.svg)
 
 ## Motivation
 

@@ -42,6 +42,16 @@ describe('mock server', () => {
     expect(response.body).toEqual({ bar: 'bar' })
   })
 
+  it('当发起任何请求的时候, 需要返回允许跨域的头', async () => {
+    // act
+    const response = await request(app)
+      .get('/api/v1/images?param=1')
+    // assert
+    expect(response.header['access-control-allow-origin']).toEqual('*')
+    expect(response.header['access-control-allow-headers']).toEqual('*')
+    expect(response.header['access-control-allow-methods']).toEqual('post, get, options')
+  })
+
   describe('搜索 request', () => {
     afterEach(() => {
       clearRequestsData()

@@ -6,6 +6,8 @@ const expressApp = express()
 
 let response = {}
 
+let requestsData = []
+
 const DEFAULT_PORT = 3500
 
 let listenPort = DEFAULT_PORT
@@ -19,7 +21,19 @@ const config = {
   }
 }
 
+const search = ({ path }) => {
+  let result = requestsData
+  if (path) {
+    result = requestsData.filter((requestData) => {
+      return requestData.path === path
+    })
+  }
+
+  return result.map((item) => ({ path: item.path, query: item.query, method: item.method }))
+}
+
 expressApp.all('*', (req, res, next) => {
+  requestsData.push(req)
   res.send(response.body)
 })
 
@@ -42,5 +56,9 @@ module.exports = {
         resolve()
       })
     })
+  },
+  search,
+  clearRequestsData: () => {
+    requestsData = []
   }
 }

@@ -9,7 +9,7 @@
   },
   "name": "mock-server",
   "description": "一个 server 模拟工具, 可配置响应, 获取某个请求是否接收到了",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "test": "jest",

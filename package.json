@@ -7,7 +7,7 @@
     "standard": "^14.3.1",
     "supertest": "^4.0.2"
   },
-  "name": "mock-server",
+  "name": "@tuchuang.space/mock-server",
   "description": "一个 server 模拟工具, 可配置响应, 获取某个请求是否接收到了",
   "version": "0.1.0",
   "main": "index.js",
@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jiang-Xuan/mock-server/issues"
   },

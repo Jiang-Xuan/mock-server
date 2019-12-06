@@ -39,7 +39,7 @@ describe('mock server', () => {
     expect(response.body).toEqual({ bar: 'bar' })
   })
 
-  describe('搜索 response', () => {
+  describe('搜索 request', () => {
     afterEach(() => {
       clearRequestsData()
     })

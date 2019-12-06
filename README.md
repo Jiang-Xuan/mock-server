@@ -11,12 +11,15 @@
 
 ## Usage
 
-```
+```js
 const mockServer = require('mock-server')
 
 describe('某个功能', () => {
   beforeAll(async () => {
     await mockServer.start()
+  })
+  afterAll(async () => {
+    await mockServer.stop()
   })
   
   it('发起 /api/v1/image 请求, 并且带上图片数据', async () => {
